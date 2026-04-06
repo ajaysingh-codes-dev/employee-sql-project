@@ -38,6 +38,7 @@ month_running As (
 )
 SELECT * FROM month_running;
 
+
 -- 🔹 5. Hiring Sprint Detection (Rapid Hiring Analysis)
 WITH hire_gape AS (
     SELECT name, dep_id, join_date, LAG(join_date) OVER(PARTITION BY dep_id ORDER BY join_date) AS prev_hire_date,
